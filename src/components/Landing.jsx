@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState, useRef, useEffect } from "react"; // Added useRef and useEffect
+import { useState, useRef, useEffect } from "react";
 import ActionButton from "./ActionButton";
 import {
   COIN_NAME,
@@ -11,7 +11,7 @@ import {
 } from "../config.js";
 import introVideo from "../assets/intro.mp4"; // Make sure the path is correct
 
-// A new Header component for a clean, fixed navigation bar
+// Header component with clickable Ticker
 function Header() {
   return (
     <motion.header
@@ -33,9 +33,12 @@ function Header() {
         zIndex: 1000,
       }}
     >
-      <div style={{ fontWeight: "600", color: "#52d593", fontSize: "1.2rem" }}>
-        {TICKER}
-      </div>
+      {/* This link will now refresh the page */}
+      <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <div style={{ fontWeight: "600", color: "#52d593", fontSize: "1.2rem" }}>
+          {TICKER}
+        </div>
+      </a>
       <ActionButton href={X_COMMUNITY_URL} small>
         <svg
           width="14"
@@ -161,7 +164,7 @@ export default function Landing() {
               </h1>
               
               <p style={{ color: '#a0aec0', marginBottom: '2rem', textAlign: 'left', maxWidth: '450px', lineHeight: '1.6'}}>
-                The currently most viral trend launched on Solana, the official coin of the Unlike me&nbsp;
+                Join the most viral phenomenon sweeping the internet, the official coin of the Unlike Me&nbsp;
                 <a 
                   href="https://www.tiktok.com/search?q=unlike%20me&t=1755706763212" 
                   target="_blank" 
