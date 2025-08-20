@@ -1,0 +1,304 @@
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+html, body, #root { 
+  height: 100%; 
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif; 
+  background: #0a0a0b; 
+  color: #eee; 
+  scroll-behavior: smooth;
+}
+
+.fullscreen-center {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.glass {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.glass:hover {
+  border-color: rgba(82, 213, 147, 0.3);
+  box-shadow: 0 25px 50px -12px rgba(82, 213, 147, 0.1);
+}
+
+button {
+  cursor: pointer;
+  padding: 1rem 2rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: all 0.6s ease;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+button:hover { 
+  background: rgba(82, 213, 147, 0.2); 
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(82, 213, 147, 0.15);
+}
+
+input { 
+  padding: 0.8rem 1rem; 
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  color: white;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(82, 213, 147, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(82, 213, 147, 0.5);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s infinite ease-in-out;
+}
+
+/* Icon styles */
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-sm {
+  width: 16px;
+  height: 16px;
+}
+
+.icon-md {
+  width: 20px;
+  height: 20px;
+}
+
+.icon-lg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .glass {
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+  }
+  
+  button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Add this to replace .fullscreen-center */
+.fullscreen-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 2rem 2rem 2rem; /* Add top padding for the fixed header */
+}
+
+/* Modify the .glass class and add .main-card */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  text-align: center;
+  max-width: 1100px; /* Make the card wider */
+  width: 100%;
+  margin: auto;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+/* New classes for the two-column layout */
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.info-column {
+  flex: 1;
+  text-align: left; /* Align text to the left */
+}
+
+.video-column {
+  flex-basis: 300px; /* Set a base width for the video column */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-frame {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 432 / 848; /* Maintain the video's aspect ratio */
+  border-radius: 28px; /* Slightly larger than video for a nice frame */
+  padding: 8px; /* Frame thickness */
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Adjust the ActionButton specifically if needed in a component file, or add a class for small versions */
+.action-button-small {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+}
+
+
+/* Responsive design for the new layout */
+@media (max-width: 900px) {
+  .content-wrapper {
+    flex-direction: column-reverse; /* Stack video on top on mobile */
+    gap: 2.5rem;
+  }
+
+  .info-column,
+  .glass {
+    text-align: center; /* Center text on mobile */
+  }
+  
+  .info-column h1, .info-column p {
+    text-align: center; /* Center align headings and paragraphs */
+  }
+  
+  .info-column div[style*="justify-content: flex-start"] {
+     justify-content: center !important; /* Center the buttons */
+  }
+
+  .video-column {
+    flex-basis: auto;
+    width: 100%;
+  }
+
+  .video-frame {
+    max-width: 280px;
+  }
+  
+  .fullscreen-container {
+    padding-top: 6rem;
+  }
+}
+
+/* Add these new styles to index.css */
+
+.video-frame {
+  position: relative; /* This is crucial for positioning the button */
+  /* ... keep existing styles for video-frame */
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 432 / 848;
+  border-radius: 28px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.mute-button {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  z-index: 10;
+}
+
+.mute-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: scale(1.1); /* Keep the hover effect from the original button */
+}
+
+.mute-button:active {
+  transform: scale(1);
+}
+
+/* Remove hover shine effect for this specific button */
+.mute-button::before {
+  display: none;
+}
