@@ -181,32 +181,6 @@ export default function IntroFrame({ onFinished }) {
             >
               <PlayIcon /> Play
             </motion.button>
-            
-            {showSkip && (
-              <motion.button
-                onClick={handleSkip}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.4 }}
-                style={{
-                  // REMOVED BOX STYLES
-                  marginTop: "2.5rem",
-                  fontSize: "1rem",
-                  background: "none",
-                  border: "none",
-                  padding: "0",
-                  color: "#aaa",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "0.5rem",
-                  cursor: "pointer",
-                  fontFamily: 'Horizon'
-                }}
-                whileHover={{ opacity: 0.8 }}
-              >
-                <XIcon /> Skip
-              </motion.button>
-            )}
           </motion.div>
         )}
       </motion.div>
