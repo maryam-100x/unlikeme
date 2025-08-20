@@ -163,22 +163,32 @@ export default function Landing() {
                 {COIN_NAME}
               </h1>
               
-              <p style={{ color: '#a0aec0', marginBottom: '2rem', textAlign: 'left', maxWidth: '450px', lineHeight: '1.6'}}>
-                Join the most viral phenomenon sweeping the internet, the official coin of the Unlike Me&nbsp;
-                <a 
-                  href="https://www.tiktok.com/search?q=unlike%20me&t=1755706763212" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  style={{
-                    color: '#52d593',
-                    fontWeight: '500',
-                    textDecoration: 'underline',
-                    textUnderlineOffset: '3px'
-                  }}
-                >
-                  TikTok trend
-                </a>.
-              </p>
+              <p style={{
+  color: '#a0aec0',
+  marginBottom: '2rem',
+  textAlign: 'left',
+  maxWidth: '450px',
+  lineHeight: '1.6',
+  fontSize: '.9rem',
+  letterSpacing: '0.05em', // Adds space between letters
+  wordSpacing: '0.2em' // Adds space between words
+}}>
+  The official coin of the Unlike Me&nbsp;
+  <a 
+    href="https://www.tiktok.com/search?q=unlike%20me&t=1755706763212" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    style={{
+      color: '#52d593',
+      fontWeight: '500',
+      textDecoration: 'underline',
+      textUnderlineOffset: '3px'
+    }}
+  >
+    TikTok trend
+  </a>.
+  Launched on Solana.
+</p>
 
               <motion.div
                 onClick={copyToClipboard}

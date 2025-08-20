@@ -119,26 +119,24 @@ export default function IntroFrame({ onFinished }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             style={{
+              // REMOVED BOX STYLES
               position: "absolute",
               top: "2rem",
               right: "2rem",
               zIndex: 4,
               fontSize: "1rem",
-              padding: "0.8rem 1.5rem",
-              background: "rgba(255,255,255,0.1)",
-              border: "1px solid rgba(255,255,255,0.2)",
-              borderRadius: "12px",
+              background: "none",
+              border: "none",
+              padding: "0",
               color: "#fff",
               display: "flex",
               alignItems: "center",
               gap: "0.5rem",
-              backdropFilter: "blur(10px)",
-              cursor: "pointer"
+              cursor: "pointer",
+              textShadow: "0 1px 4px rgba(0,0,0,0.5)",
+              fontFamily: 'Horizon'
             }}
-            whileHover={{ 
-              background: "rgba(255,255,255,0.15)",
-              scale: 1.05
-            }}
+            whileHover={{ scale: 1.05, opacity: 0.8 }}
             whileTap={{ scale: 0.95 }}
           >
             <XIcon /> Skip
@@ -166,18 +164,19 @@ export default function IntroFrame({ onFinished }) {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               style={{
-                fontSize: "1.5rem",
-                padding: "1.2rem 2.5rem",
-                background: "rgba(82,213,147,0.15)",
-                border: "1px solid rgba(82,213,147,0.4)",
-                borderRadius: "16px",
+                // REMOVED BOX STYLES
+                fontSize: "2.5rem",
+                background: "none",
+                border: "none",
+                padding: "0",
                 color: "#fff",
                 fontWeight: "600",
                 display: "flex",
                 alignItems: "center",
-                gap: "0.8rem",
-                backdropFilter: "blur(10px)",
-                boxShadow: "0 10px 30px rgba(82,213,147,0.2)"
+                gap: "1rem",
+                cursor: "pointer",
+                textShadow: "0 2px 8px rgba(0,0,0,0.6)",
+                fontFamily: 'Horizon'
               }}
             >
               <PlayIcon /> Play
@@ -190,17 +189,20 @@ export default function IntroFrame({ onFinished }) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.4 }}
                 style={{
-                  marginTop: "2rem",
+                  // REMOVED BOX STYLES
+                  marginTop: "2.5rem",
                   fontSize: "1rem",
-                  padding: "0.8rem 1.8rem",
-                  background: "rgba(255,255,255,0.08)",
-                  border: "1px solid rgba(255,255,255,0.15)",
-                  borderRadius: "12px",
-                  color: "#fff",
+                  background: "none",
+                  border: "none",
+                  padding: "0",
+                  color: "#aaa",
                   display: "flex",
                   alignItems: "center",
-                  gap: "0.5rem"
+                  gap: "0.5rem",
+                  cursor: "pointer",
+                  fontFamily: 'Horizon'
                 }}
+                whileHover={{ opacity: 0.8 }}
               >
                 <XIcon /> Skip
               </motion.button>
@@ -215,13 +217,14 @@ export default function IntroFrame({ onFinished }) {
 // SVG icon components
 function PlayIcon() {
   return (
+    // Increased size to match larger "Play" text
     <svg 
-      width="24" 
-      height="24" 
+      width="48" 
+      height="48" 
       viewBox="0 0 24 24" 
-      fill="none" 
+      fill="currentColor" // Changed to fill for a solid look
       stroke="currentColor" 
-      strokeWidth="2"
+      strokeWidth="1"
     >
       <polygon points="5 3 19 12 5 21 5 3" />
     </svg>
@@ -236,7 +239,7 @@ function XIcon() {
       viewBox="0 0 24 24" 
       fill="none" 
       stroke="currentColor" 
-      strokeWidth="2"
+      strokeWidth="3" // Made slightly thicker for visibility
     >
       <line x1="18" y1="6" x2="6" y2="18" />
       <line x1="6" y1="6" x2="18" y2="18" />

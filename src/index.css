@@ -1,14 +1,21 @@
+@font-face {
+  font-family: 'Horizon';
+  src: url('./fonts/horizon.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * { 
   box-sizing: border-box; 
   margin: 0; 
   padding: 0; 
 }
 
-html, body, #root { 
-  height: 100%; 
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif; 
-  background: #0a0a0b; 
-  color: #eee; 
+html, body, #root {
+  height: 100%;
+  font-family: 'Horizon', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: #0a0a0b;
+  color: #eee;
   scroll-behavior: smooth;
 }
 
