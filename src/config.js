@@ -1,6 +1,6 @@
 export const COIN_NAME = "Unlike me";
 export const TICKER = "$UNLIKEME";
-export const CONTRACT_ADDRESS = "Soon";
+export const CONTRACT_ADDRESS = "GcjexETWe5E1tV3k1sa5GJmAU9uAxUDN6HLU4rmWpump";
 
 export const X_COMMUNITY_URL = "https://x.com/i/communities/1959725208203358592";
 export const PUMPFUN_URL = `https://pump.fun/coin/${CONTRACT_ADDRESS}`;
